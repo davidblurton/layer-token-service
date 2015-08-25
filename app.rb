@@ -6,8 +6,9 @@ require "sinatra/json"
 
 class TokenService < Sinatra::Base
   helpers Sinatra::JSON
-  
-  post '/hello/layer' do
+  set :bind, '0.0.0.0'
+
+  post '/' do
     response = {
       token: Layer::IdentityToken.new(params[:user_id], params[:nonce])
     }
@@ -15,7 +16,7 @@ class TokenService < Sinatra::Base
     json response
   end
 end
- 
+
 if __FILE__ == $0
   TokenService.run!
 end

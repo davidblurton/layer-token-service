@@ -16,15 +16,15 @@ heroku config:set LAYER_PROVIDER_ID=provider_id LAYER_KEY_ID=key_id LAYER_PRIVAT
 For all other deployment methods (or testing it locally) just set the appropriate variables
 
 ```
-LAYER_PROVIDER_ID=provider_id 
-LAYER_KEY_ID=key_id 
+LAYER_PROVIDER_ID=provider_id
+LAYER_KEY_ID=key_id
 LAYER_PRIVATE_KEY="some real long and multiline RSA super key"
 ```
 
 ## Usage
 
 ```bash
-curl -X "POST" "http://your-new-app.herokuapp.com/hello/layer" \
+curl -X "POST" "http://your-new-app.herokuapp.com" \
   -d "user_id=1" \
   -d "nonce=2"
 ```
@@ -40,5 +40,5 @@ This will be your response:
 
 ## Credits
 
-Thanks to [@layer](http://www.layer.com) for this awesome service.  
+Thanks to [@layer](http://www.layer.com) for this awesome service.
 Webservice brought to you by [@dreimannzelt](http://www.dreimannzelt.de), ©2015
